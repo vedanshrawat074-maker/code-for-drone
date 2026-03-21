@@ -1,0 +1,72 @@
+PROJECT: Gesture Controlled Drone
+
+-------------------------------------
+WHAT THIS PROJECT DOES
+-------------------------------------
+- ESP32 reads motion data using MPU6050 sensor
+- Kalman filter is used to reduce noise in sensor readings
+- Processed data (X, Y, trigger) is sent via Bluetooth
+- Python script receives data and controls drone movement
+- Drone responds to tilt (roll, pitch) and trigger input
+
+-------------------------------------
+DATA FLOW
+-------------------------------------
+MPU6050 → ESP32 → Bluetooth → Python → Drone
+
+-------------------------------------
+KEY COMPONENTS
+-------------------------------------
+- ESP32 (microcontroller)
+- MPU6050 (accelerometer + gyroscope)
+- LDR sensor (used as trigger)
+- Bluetooth Serial communication
+- Python + Crazyflie API (drone control)
+
+-------------------------------------
+MY CONTRIBUTION
+-------------------------------------
+- Tested drone behavior in real-time flights
+- Adjusted roll, pitch, and altitude parameters manually
+- Observed drift and corrected it using trial-and-error tuning
+- Reduced Bluetooth delay to improve responsiveness
+- Helped improve overall flight stability
+
+-------------------------------------
+IMPORTANT CONCEPTS (REVISE LATER)
+-------------------------------------
+- Kalman Filter (basic idea: smoothing noisy sensor data)
+- Roll, Pitch, Yaw (drone movement axes)
+- Sensor fusion
+- Bluetooth serial communication
+- Real-time control systems
+
+-------------------------------------
+PROBLEMS FACED
+-------------------------------------
+- Sensor noise causing unstable movement
+- Delay in Bluetooth communication
+- Difficulty in stabilizing drone movement
+- Required multiple trial-and-error adjustments
+
+-------------------------------------
+HOW IT WAS SOLVED
+-------------------------------------
+- Used Kalman filter for smoothing data
+- Added deadband to ignore small noise
+- Manually tuned control parameters (roll/pitch)
+- Reduced communication delay
+
+-------------------------------------
+FUTURE IMPROVEMENTS
+-------------------------------------
+- Implement PID controller
+- Improve accuracy of movement
+- Add obstacle detection
+- Build mobile app for control
+
+-------------------------------------
+QUICK REVISION (1-MINUTE)
+-------------------------------------
+ESP32 reads motion → Kalman filter smooths → Bluetooth sends data →
+Python receives → Drone moves based on tilt → Manual tuning improves stability
